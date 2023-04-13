@@ -1,4 +1,4 @@
-// <T> is generic types ใส้ type เอง
+// <T> คือ generic types ใส่ type เอง
 public class Queue<T> {
     // fields
     private int front;
