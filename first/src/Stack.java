@@ -1,8 +1,10 @@
 public class Stack<T> {
+    // fields / attributes 
     private int top;
     private final int size;
     private final T[] stack;
 
+    // constructor
     public Stack(int size) {
         this.size = size;
         this.stack = (T[]) new Object[size];
