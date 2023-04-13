@@ -50,6 +50,6 @@ public class Stack<T> {
         for (T element : stack) {
             System.out.print(element + " ");
         }
-        System.out.print("| ");
+        System.out.println("");
     }
 }
