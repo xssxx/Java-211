@@ -15,7 +15,6 @@ public class Queue<T> {
     }
 
     // methods
-
     public void enqueue(T item) {
         if (isFull()) {
             System.out.println("Queue is full");

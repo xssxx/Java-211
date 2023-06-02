@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         // integer queue
-        Queue<Integer> q = new Queue(5);
+        Queue<Integer> q = new Queue<>(5);
         q.enqueue(10);
         q.enqueue(20);
         q.enqueue(30);
@@ -17,7 +17,7 @@ public class Main {
         System.out.println("----------------");
 
         // character queue
-        Queue<Character> q2 = new Queue(5);
+        Queue<Character> q2 = new Queue<>(5);
         q2.enqueue('a');
         q2.enqueue('b');
         q2.enqueue('c');
