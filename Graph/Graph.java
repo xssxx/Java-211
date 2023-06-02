@@ -8,6 +8,11 @@ public class Graph {
     private Vector<Boolean> visited;
     private Vector<Integer> layer;
 
+    
+    /*
+     * Constructor
+     * @param size : size of node in graph
+     */
     public Graph(int size) {
         this.size = size;
         this.adj = new Vector<>(size);
@@ -24,11 +29,21 @@ public class Graph {
         }
     }
 
+    
+    /*
+     * add Edge from node u to node v
+     * @param u : node u
+     * @param v : node v
+     */
     public void addEdge(int u, int v) {
         adj.get(u).add(v);
         adj.get(v).add(u);
     }
 
+    /*
+     * Depth first search algorithm
+     * @param start : start node to Depth first search
+     */
     public void dfs(int start) {
         visited.set(start, true);
 
@@ -40,6 +55,10 @@ public class Graph {
         }
     }
 
+    /*
+     * Breadth first search algorithm
+     * @param start node to breadth first search
+     */
     public void bfs(int start) {
         layer.set(start, 0);
         for (int i = 0; i < this.size; i++) {
