@@ -1,6 +1,5 @@
 #include <iostream>
 #include <climits>
-
 using namespace std;
 
 void kadane(int* array, int& maxSum, int size) {
