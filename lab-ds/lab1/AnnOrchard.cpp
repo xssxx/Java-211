@@ -3,12 +3,11 @@
 
 using namespace std;
 
-void kadane(int* array, int& maxSum, int& maxUp, int& maxDown, int size) {
+void kadane(int* array, int& maxSum, int size) {
     int currentSum = array[0] >= 0 ? array[0] : 0;
     int currentUp = 0;
 
     maxSum = currentSum;
-    maxUp = maxDown = currentUp;
 
     for (int i = 1; i < size; i++) {
         if (currentSum <= 0) {
@@ -18,11 +17,8 @@ void kadane(int* array, int& maxSum, int& maxUp, int& maxDown, int size) {
             currentSum += array[i];
         }
 
-        if (currentSum > maxSum) {
+        if (currentSum > maxSum) 
             maxSum = currentSum;
-            maxUp = currentUp;
-            maxDown = i;
-        }
     }
 }
 
@@ -37,11 +33,11 @@ int findMaxSum(int** matrix, int size) {
                 temp[i] += matrix[i][right];
             }
 
-            int tempMaxSum, tempMaxUp, tempMaxDown;
-            kadane(temp, tempMaxSum, tempMaxUp, tempMaxDown, size);
+            int currentSum;
+            kadane(temp, currentSum, size);
 
-            if (tempMaxSum > maxSum) {
-                maxSum = tempMaxSum;
+            if (currentSum > maxSum) {
+                maxSum = currentSum;
             }
         }
 
@@ -67,7 +63,6 @@ int main() {
 
     cout << result;
 
-    // Deallocate matrix memory
     for (int i = 0; i < N; i++)
         delete[] matrix[i];
 
