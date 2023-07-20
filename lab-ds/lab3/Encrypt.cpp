@@ -15,13 +15,13 @@ int main() {
     }
 
     for (int i = 1; i < row; i++) {
-        int temp[col];
+        int temp[col]; // array สำรอง ใช้เก็บค่าที่ถอดรหัส
         for (int j = 0; j < col; j++) {
             int prev = matrix[i-1][j]; // ค่าของ row ก่อนหน้า
             temp[j] = matrix[i][prev-1]; // [prev-1] เพราะ โจทย์นับจาก 1 แต่โปรแกรมนับจาก 0
         }
         // memcpy(matrix[i], temp, col * sizeof(int));
-        memmove(matrix[i], temp, col * sizeof(int));
+        memmove(matrix[i], temp, col * sizeof(int)); // เอา array temp แทนที่ matrix แถวที่ i
     }
 
     for (int i = 0; i < col; i++) {
