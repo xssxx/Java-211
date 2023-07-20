@@ -1,17 +1,15 @@
 #include <iostream>
 #include <climits>
+
 using namespace std;
 
 void kadane(int* array, int& maxSum, int size) {
     int currentSum = array[0] >= 0 ? array[0] : 0;
-    int currentUp = 0;
-
     maxSum = currentSum;
 
     for (int i = 1; i < size; i++) {
         if (currentSum <= 0) {
             currentSum = array[i];
-            currentUp = i;
         } else {
             currentSum += array[i];
         }
