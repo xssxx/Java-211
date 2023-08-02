@@ -30,8 +30,8 @@ int main() {
             while (!waitQueue.empty()) {
                 int currWait = waitQueue.top();
                 waitQueue.pop();
-                if (currWait > 1) {
-                    tempQueue.push(currWait - 1);
+                if (currWait > 0) {
+                    tempQueue.push(currWait);
                 }
             }
 
